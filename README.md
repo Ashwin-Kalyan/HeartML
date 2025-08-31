@@ -9,7 +9,7 @@ Conditions affecting the heart and blood vessels. Encompasses a range of disorde
 coronary artery disease, stroke, heart failure, and preipheral artery disease. Atherosclerosis 
 is the common underlying cause of these conditions. 
 
-We use two distinct models to predict cardiovascular disease. 
+I use two distinct models to predict cardiovascular disease. 
 
 The first is a feedforward neural network. This is built from scratch.
 
@@ -77,7 +77,7 @@ What is myocardial infarction?
 
 Myocardial infarction (MI), commonly known as a heart attack, is a serious medical condition where blood flow to the heart muscle is abruptly blocked, depriving it of oxygen and nutrients. This blockage can cause damage or death to the heart muscle. 
 
-We used two methods for creating the CNN that examines EKG data to determine whether a patient has myocardial infarction or not.
+I used two methods for creating the CNN that examines EKG data to determine whether a patient has myocardial infarction or not.
 
 The first is Tensorflow Keras. This uses ReLU and Sigmoid as its activation functions.
 
@@ -107,10 +107,12 @@ Stats:
     Train Time: ~ 1.5 hrs
     Patient Acc: 0.9518
 
+The second is a convolutional neural network written from scratch.
+
 # Conginetal Heart Defect
 
 Data: https://figshare.com/articles/dataset/HVSMR-2_0_orig_/25226360?backTo=/collections/HVSMR-2_0_A_3D_cardiovascular_MR_dataset_for_whole-heart_segmentation_in_congenital_heart_disease/7074755
 
 So I was not able to find a data source that included both normal and positive cases of CHD, so I reframed this project as an anamoly detection (one-class classification) problem. I could've hypothetically gotten a control case of normal MRI images but that might've just confused the model especially if they were formatted differently or of different areas of the heart. 
 
-We use Keras to create a Cardiac MRI Autoencoder using a 3D convolutional neural network. The model will essentially compress and reconstruct the CHD MRI images. It will be able to do this very well with a low Mean-Squared Error, since the only data I gave it are positive cases. If it is given a normal scan it will have a harder time reconstructing it since it will learn the abnormalities and specific patterns only seen in CHD cases, thus resulting in a higher MSE for reconstructing normal cases. Thus, if the MSE passes a certain threshold, we will know that it is a normal patient, and if it is below the threshold it is a CHD patient.  
+I use Keras to create a Cardiac MRI Autoencoder using a 3D convolutional neural network. The model will essentially compress and reconstruct the CHD MRI images. It will be able to do this very well with a low Mean-Squared Error, since the only data I gave it are positive cases. If it is given a normal scan it will have a harder time reconstructing it since it will learn the abnormalities and specific patterns only seen in CHD cases, thus resulting in a higher MSE for reconstructing normal cases. Thus, if the MSE passes a certain threshold, we will know that it is a normal patient, and if it is below the threshold it is a CHD patient.  
